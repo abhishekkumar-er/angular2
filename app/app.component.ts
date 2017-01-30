@@ -1,11 +1,17 @@
-import * as path from 'path';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
   template: `
-  <user></user>
+ <!-- <about></about>
+  <user></user> -->
+  <ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/about">About</a></li>
+  </ul>
+  <hr />
+  <router-outlet></router-outlet>
   `,
 })
-export class AppComponent  { 
+export class AppComponent {
 }
