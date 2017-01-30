@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 import { PostService } from '../services/post.service';
 
 @Component({
-    moduleId:module.id,
+    moduleId: module.id,
     selector: 'user',
     templateUrl: `user.component.html`,
     providers: [PostService]
@@ -38,7 +38,8 @@ export class UserComponent {
         return this.showHobbies = this.showHobbies ? false : true;
     }
     addHobby(hobby: any) {
-        this.hobbies.push(hobby)
+        if (hobby != "" && this.hobbies.indexOf(hobby) == -1)
+            this.hobbies.push(hobby)
     }
     deleteHobby(i: any) {
         this.hobbies.splice(i, 1);
